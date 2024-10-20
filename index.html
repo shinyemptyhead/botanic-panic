@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Botanic Panic" startnode="1" creator="Twine" creator-version="2.9.0" format="SugarCube" format-version="2.36.1" ifid="B9ACF002-0290-460C-8808-64A921C8EE62" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Opening" tags="" position="625,25" size="100,100">[img[bp_Images/botanicpanic_splashscreen.png]]
+	<tw-storydata name="Botanic Panic" startnode="1" creator="Twine" creator-version="2.9.0" format="SugarCube" format-version="2.36.1" ifid="B9ACF002-0290-460C-8808-64A921C8EE62" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Game Opening" tags="" position="625,25" size="100,100">[img[bp_images/botanicpanic_splashscreen.png]]
 
 Welcome to Botanic Panic, a short game about a lovely day out set in Botanic Park in Belfast.
 
@@ -111,21 +111,21 @@ Your aim is to find someone to get lunch with, because everything tastes better 
 With your aims firmly set in your mind, you &lt;&lt;link [[enter the park|Park Entrance]]&gt;&gt;&lt;&lt;/link&gt;&gt;.
 
 /* Set up story variables. */
- &lt;&lt;set $kelvin_is_cold to true&gt;&gt;
- &lt;&lt;set $riddle_solved to false&gt;&gt;
- &lt;&lt;set $obvious_answer_given to false&gt;&gt;
- &lt;&lt;set $vampire_defeated to false&gt;&gt;
- &lt;&lt;set $moxie to 1&gt;&gt;
- &lt;&lt;set $smarts to 1&gt;&gt;
- &lt;&lt;set $inventory to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Park Entrance" tags="" position="1025,125" size="100,100">&lt;h1&gt;Park Entrance&lt;/h1&gt;
-[img[bp_Images/parkentrance.jpg]]
-/* This is a bit of a hacky way to check if this is our first time on this screen, by checking if we&#39;ve been to the next one, but it&#39;s to show off the &quot;check if visited&quot; function */
-&lt;&lt;if not hasVisited(&quot;Flower Garden&quot;)&gt;&gt;
+ &lt;&lt;set $kelvin_is_cold to true&gt;&gt;\
+ &lt;&lt;set $riddle_solved to false&gt;&gt;\
+ &lt;&lt;set $obvious_answer_given to false&gt;&gt;\
+ &lt;&lt;set $vampire_defeated to false&gt;&gt;\
+ &lt;&lt;set $moxie to 1&gt;&gt;\
+ &lt;&lt;set $smarts to 1&gt;&gt;\
+ &lt;&lt;set $inventory to []&gt;&gt;\</tw-passagedata><tw-passagedata pid="2" name="Park Entrance" tags="" position="1025,125" size="100,100">&lt;h1&gt;Park Entrance&lt;/h1&gt;
+[img[bp_images/parkentrance.jpg]]
+/* This is a bit of a hacky way to check if this is our first time on this screen, by checking if we&#39;ve been to the next one, but it&#39;s to show off the &quot;check if visited&quot; function */\
+&lt;&lt;if not hasVisited(&quot;Flower Garden&quot;)&gt;&gt;\
 You step into the park. It&#39;s a nice sunny day, so there are plenty of students and the like milling around or sunbathing themselves.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 At the entrance to the park is a large open area with forks leading towards the museum and the greenhouse. It&#39;s dominated by a large statue of &lt;&lt;link[[Lord Kelvin]]&gt;&gt;&lt;&lt;/link&gt;&gt;, who invented temperature.
-&lt;&lt;if $smarts&gt;=2 and $kelvin_is_cold&gt;&gt;
-	&lt;&lt;if $inventory.contains(&#39;a scarf&#39;)&gt;&gt;
+&lt;&lt;if $smarts&gt;=2 and $kelvin_is_cold&gt;&gt;\
+	&lt;&lt;if $inventory.contains(&#39;a scarf&#39;)&gt;&gt;\
 You realise that the solution to this problem is to warm Lord Kelvin up a bit. Luckily there&#39;s a traditional student method for keeping statues warm. 
 
 You tie the scarf you picked up into a loop, and perfectly toss it over Kelvin&#39;s head. Buffalo Bill Cody would be proud.
@@ -133,34 +133,35 @@ You tie the scarf you picked up into a loop, and perfectly toss it over Kelvin&#
 &quot;THAT&#39;S BETTER!&quot; says the statue. With a wave of his hand, the glacier dissolves. Now you can head south to the &lt;&lt;link [[Museum Entrance]] &gt;&gt;&lt;&lt;/link&gt;&gt; if you want. Or you could go to the [[Flower Garden]].
 
 You feel a bit more self-confident after solving that puzzle.
-		&lt;&lt;set $moxie = $moxie+1&gt;&gt;
-	&lt;&lt;else&gt;&gt;
+		&lt;&lt;set $moxie = $moxie+1&gt;&gt;\
+        &lt;&lt;set $kelvin_is_cold to false&gt;&gt;\
+	&lt;&lt;else&gt;&gt;\
 The glacier still sits there, refusing to melt due to Lord Kelvin&#39;s control of temperature. You think that you could probably solve this problem if you gave him something to keep him warm.
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $kelvin_is_cold&gt;&gt;
-    &lt;&lt;if visited(&quot;Park Entrance&quot;) is 1&gt;&gt;
-[img[bp_Images/kelvin.jpg]]
+	&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $kelvin_is_cold&gt;&gt;\
+    &lt;&lt;if visited(&quot;Park Entrance&quot;) is 1&gt;&gt;\
+[img[bp_images/kelvin.jpg]]
 &quot;IF I&#39;M COLD, EVERYONE IS COLD!&quot; declares the statue in a booming tone. 
 
 A blast of ice comes from his outstretched hand and creates a massive glacier that blocks the way to the museum. 
 
 However the path to the [[Flower Garden]] is still clear.
-	&lt;&lt;else&gt;&gt;
+	&lt;&lt;else&gt;&gt;\
 The way to the museum is blocked by the glacier. You can still head east to the [[Flower Garden]].
-    &lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;
+    &lt;&lt;/if&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 With the glacier cleared, you can head west to the [[Flower Garden]] or south to the [[Museum Entrance]].
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Flower Garden" tags="" position="975,600" size="100,100">&lt;h1&gt;Flower Garden&lt;/h1&gt;
-[img[bp_Images/flowergarden.jpg]]
-&lt;&lt;if visited(&quot;Palm House&quot;) is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="3" name="Flower Garden" tags="" position="975,600" size="100,100">&lt;h1&gt;Flower Garden&lt;/h1&gt;
+[img[bp_images/flowergarden.jpg]]
+&lt;&lt;if visited(&quot;Palm House&quot;) is 1&gt;&gt;\
 The cold air catches you off-guard for a moment, and you quickly zip your coat back up.
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if visited(&quot;Flower Garden&quot;) is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if visited(&quot;Flower Garden&quot;) is 1&gt;&gt;\
 You&#39;re standing on a kind of concourse that runs east to west. In the centre is a beautiful flower garden, and facing it are a selection of benches where you could sit and relax if you were in the mood.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You return to the flower garden.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 From here you have a lot of choices of where to go:
 
 - Into the [[Palm House]] 
@@ -171,130 +172,127 @@ From here you have a lot of choices of where to go:
 
 It&#39;s enough to make your head spin. (Remember, you can always check your map from the sidebar.)
 </tw-passagedata><tw-passagedata pid="4" name="Museum Entrance" tags="" position="750,150" size="100,100">&lt;h1&gt;Museum Entrance&lt;/h1&gt;
-[img[bp_Images/museum.jpg]]
-&lt;&lt;if visited(&quot;Museum Entrance&quot;) is 1&gt;&gt;
+[img[bp_images/museum.jpg]]
+&lt;&lt;if visited(&quot;Museum Entrance&quot;) is 1&gt;&gt;\
 Having managed to deal with Lord Kelvin&#39;s temperature wizardry, you&#39;re able to make your way to the entrance of the Ulster Museum. It&#39;s an amazing site - as if a brutalist edifice and a ship had a baby.  Weird metallic spirals complete the effect. A sphinx gazes down at you with an air of disdain.
-[img[bp_Images/museum sphinx.jpg]]
+[img[bp_images/museum sphinx.jpg]]
 &quot;Stop!&quot; she declares. &quot;You may not pass until you have solved my riddle.&quot;
 There&#39;s no way she could actually stop you, but you know it&#39;d hurt her feelings to point that out. You feel obliged to play along.
 &quot;Ahem.&quot; She clears her throat. &quot;What walks on four legs in the morning, two legs during the day, and three legs at night?&quot;
 
 You could try and [[solve the riddle]]. Or you could go back to the [[Park Entrance]]. 
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if $riddle_solved&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;if $riddle_solved&gt;&gt;\
 The sphinx studiously avoids your gaze. You think she&#39;s still annoyed that you solved her riddle.
 
 You can head back north to the [[Park Entrance]] or go in to the [[Museum Lobby]].
-&lt;&lt;else&gt;&gt;
-&lt;&lt;if visited(&quot;solve the riddle&quot;) is 0&gt;&gt;
+&lt;&lt;else&gt;&gt;\
+&lt;&lt;if visited(&quot;solve the riddle&quot;) is 0&gt;&gt;\
 &quot;I knew you&#39;d be back,&quot; says the sphinx. &quot;Do you want to try and [[solve the riddle]] now?&quot;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 &quot;Well?&quot; says the sphinx. &quot;Are you going to try and [[solve the riddle]] again?&quot;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 If you feel you&#39;re above involving yourself in riddlery right now, you can go back to the [[Park Entrance]] instead.
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Palm House" tags="" position="1175,575" size="100,100">&lt;h1&gt;Park Entrance&lt;/h1&gt;
-[img[bp_Images/palmhouse.jpg]]
-&lt;&lt;if visited(&quot;Palm House&quot;) is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="5" name="Palm House" tags="" position="1175,575" size="100,100">&lt;h1&gt;Park Entrance&lt;/h1&gt;
+[img[bp_images/palmhouse.jpg]]
+&lt;&lt;if visited(&quot;Palm House&quot;) is 1&gt;&gt;\
 You step into the greenhouse. Outside it was a nice sharp afternoon, so the hot air of the glass-walled building comes as a bit of a shock. You hastily unzip your coat to take advantage of it and let the warmth seep into you.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 The long room is filled with plants that are ill-adjusted to the cold Northern Irish weather. At the far end, looming over them all, is your good friend &lt;&lt;link [[Audrey]]&gt;&gt;&lt;&lt;/link&gt;&gt;.
 
 There&#39;s only one exit, back to the &lt;&lt;link [[Flower Garden]]&gt;&gt;&lt;&lt;/link&gt;&gt;.</tw-passagedata><tw-passagedata pid="6" name="Seamus Heaney Library" tags="" position="1175,900" size="100,100">&lt;h1&gt;Seamus Heaney Library&lt;/h1&gt;
-[img[bp_Images/library.jpg]]
+[img[bp_images/library.jpg]]
 You&#39;re standing in front of the imposing fortress of knowledge, the Queens University Library, which sits just outside one of the exits of the park. Despite the fact that it&#39;s officially named the McClay Library, for some reason you&#39;ve always thought of it as the Seamus Heaney Library. There&#39;s no particular reason why.
 
 A large bronze head sits on the plaza outside the library. It might look a little scary, but you&#39;re not worried - it&#39;s just [[your friend Eco]], after all.
 
 From here, you can go southwest to the [[Flower Garden]] or south to the [[Mural]].</tw-passagedata><tw-passagedata pid="7" name="Mural" tags="" position="975,900" size="100,100">&lt;h1&gt;Mural&lt;/h1&gt;
-[img[bp_Images/mural_pathway.jpg]]
-&lt;&lt;if visited(&quot;Mural&quot;) is 1&gt;&gt;
+[img[bp_images/mural_pathway.jpg]]
+&lt;&lt;if visited(&quot;Mural&quot;) is 1&gt;&gt;\
 A [[colourful mural]] stands by the side of the path. Wait, if it&#39;s painted on plywood, is it still a mural? Or is this a mere billboard filled with pretensions of grandeur? You fall into a spiral of introspection on the topic for a few minutes, before firmly deciding not to think about it too much.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You smile at the [[colourful mural]]. You&#39;ve decided it&#39;s a mural. That&#39;s all there is to it.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 The path here goes north to the [[Seamus Heaney Library]], or south to the [[Toilets]]. There&#39;s a fork that leads northwest to the [[Flower Garden]] ,
 </tw-passagedata><tw-passagedata pid="8" name="Toilets" tags="" position="750,900" size="100,100">&lt;h1&gt;Toilets&lt;/h1&gt;
 
-&lt;&lt;if visited(&quot;Toilets&quot;) is 1&gt;&gt;
-[img[bp_Images/toilets.jpg]]
+&lt;&lt;if visited(&quot;Toilets&quot;) is 1&gt;&gt;\
+[img[bp_images/toilets.jpg]]
 A small building sits by the side of the path, You know it serves an important function, but it&#39;s always given you the creeps. You&#39;ve never seen anyone come out of it alive. Of course, you&#39;ve also never seen anyone come out of it dead. And you&#39;ve never seen anyone go into it either. Not that you&#39;ve ever actually spent that long looking at it. Honestly it&#39;s probably fine, but as a dog every tree in this park is your toilet so you don&#39;t need to worry.
-&lt;&lt;else&gt;&gt;
-[img[bp_Images/toilets_pathway.jpg]]
+&lt;&lt;else&gt;&gt;\
+[img[bp_images/toilets_pathway.jpg]]
 You make a point of not looking at the toilets. You&#39;ve decided they offend you.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 The path here goes north to the [[Mural]] and south to a [[Fork In The Road]]. There&#39;s also a [[large open area|Open Area]] to the west.</tw-passagedata><tw-passagedata pid="9" name="Crossroads" tags="" position="750,575" size="100,100">&lt;h1&gt;Crossroads&lt;/h1&gt;
-[img[bp_Images/crossroads.jpg]]
-&lt;&lt;if visited(&quot;Crossroads&quot;) is 1&gt;&gt;
+[img[bp_images/crossroads.jpg]]
+&lt;&lt;if visited(&quot;Crossroads&quot;) is 1&gt;&gt;\
 The pathway goes in four directions here in what you&#39;ve been told is a &quot;cross roads&quot; formation. The problem with a crossroads, though, is that they are &lt;b&gt;always&lt;/b&gt; home to a devil. You just can&#39;t see most of them. But you can see this one - a fearsome vampire with the unholy power of bouncing. He&#39;s sitting on the edge of the crossroads, blocking one of the paths.
-&lt;&lt;else&gt;&gt; 
+&lt;&lt;else&gt;&gt; \
 You return to the crossroads of your destiny, which is also an actual crossroads.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
-&lt;&lt;if $vampire_defeated&gt;&gt;
+&lt;&lt;if $vampire_defeated&gt;&gt;\
 The Vampire Tigger is still hanging out at the crossroads, avoiding eye contact with you. Now that he&#39;s been been defeated, you can head west to the [[Tropical Ravine]]. You&#39;ve also got the option of going back to the [[Flower Garden]],  or heading south to the [[Band Stand]], or even going east to the [[Open Area]]. Man, you&#39;ve got it all.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You can&#39;t go west - not with the [[Vampire Tigger]] on the loose. Your only choices are to go north to the [[Flower Garden]] , south to the [[Band Stand]], or east past the [[Open Area]] .
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Open Area" tags="" position="775,725" size="100,100">&lt;h1&gt;Open Area&lt;/h1&gt;
-[img[bp_Images/open_area.jpg]]
-&lt;&lt;if visited(&quot;Open Area&quot;) is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="10" name="Open Area" tags="" position="775,725" size="100,100">&lt;h1&gt;Open Area&lt;/h1&gt;
+[img[bp_images/open_area.jpg]]
+&lt;&lt;if visited(&quot;Open Area&quot;) is 1&gt;&gt;\
 The path goes past a huge open area. Sometimes it&#39;s covered in students, but today it&#39;s only home to a few people milling around, and a [[young lady|Harpist]], lazily plucking at a harp. You take advantage of the emptiness to indulge your canine nature by running around barking your head off like an idiot. It makes you feel a lot better.
-&lt;&lt;set $moxie = $moxie+1&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $moxie = $moxie+1&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You walk past the open area again. This time you resist the urge to run around it.
 &lt;&lt;if not $inventory.contains(&#39;a harp&#39;)&gt;&gt;
 The [[young lady with the harp|Harpist]] is still there, still lazily plucking.
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-
-
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
 
 The path goes east to the [[Toilets]] or west to the [[Crossroads]] .</tw-passagedata><tw-passagedata pid="11" name="Fork In The Road" tags="" position="450,825" size="100,100">&lt;h1&gt;Fork In The Road&lt;/h1&gt;
-[img[bp_Images/fork_in_the_road.jpg]]
-&lt;&lt;if visited(&quot;Fork In The Road&quot;) is 1&gt;&gt;
+[img[bp_images/fork_in_the_road.jpg]]
+&lt;&lt;if visited(&quot;Fork In The Road&quot;) is 1&gt;&gt;\
 Two roads diverge in a city park. You consider taking the one least travelled by, which leads down a gentle incline south-west to the [[PEC]]. Or you can go northwest, to the [[Band Stand]]. Or you could head north to the [[Toilets]]. I suppose it&#39;s three paths, actually, counting the one you came from. Unlike a poet, you have the option of retreat. There&#39;s even a fourth option, which is heading across the grass to a [[Secluded Clearing]]. Though that doesn&#39;t really count as a path.
 
 
 You might be overthinking this.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You return to the fork in the path. You could head west into a [[Secluded Clearing]], or south-west to the [[PEC]],  or north to the [[Toilets]], or northwest to the [[Band Stand]].
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 You see an [[informative sign]] by the side of the path.</tw-passagedata><tw-passagedata pid="12" name="Tropical Ravine" tags="" position="750,325" size="100,100">&lt;h1&gt;Tropical Ravine&lt;/h1&gt;
-[img[bp_Images/tropical_ravine.jpg]]
-&lt;&lt;if visited(&quot;Tropical Ravine&quot;) is 1&gt;&gt;
+[img[bp_images/tropical_ravine.jpg]]
+&lt;&lt;if visited(&quot;Tropical Ravine&quot;) is 1&gt;&gt;\
 After days of marching through the jungle, you&#39;ve finally made, Half the party are dead, the other half are hanging by a thread. You break out of the muggy darkness under the tree cover and see it stretching out in front of you - the magnificent ravine, so deep you cannot see the bottom. The roaring of the waterfall cascading into the fathomless depths - 
 Oh wait no, that was the &lt;i&gt;other&lt;/i&gt; tropical ravine. This one is just a building that mixes red-brick 19th century architecture with modern tempered glass and shiny metal. At least on the outside. 
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You return to the outside of the Tropical Ravine.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 You can head [[into the building|Ravine Interior]] if you like. Otherwise this path leads to the [[Rose Avenue]] in one direction, and the [[Crossroads]] in the other.</tw-passagedata><tw-passagedata pid="13" name="Band Stand" tags="" position="575,625" size="100,100">&lt;h1&gt;Band Stand&lt;/h1&gt;
-[img[bp_Images/bandstand.jpg]]
+[img[bp_images/bandstand.jpg]]
 A bandstand sans band. ¡No Hay Banda!, as David Lynch put it. There is, however, a recording. Someone is listening to a brass band song at high volume on a little bluetooth speaker. Perhaps they&#39;re dreaming of days gone by.
 
-&lt;&lt;if not hasVisited(&quot;Bandstand Seats&quot;)&gt;&gt;
-[img[bp_Images/bandstand_seats.jpg]]
+&lt;&lt;if not hasVisited(&quot;Bandstand Seats&quot;)&gt;&gt;\
+[img[bp_images/bandstand_seats.jpg]]
 Next to the bandstand is a little rainshelter. You could &lt;&lt;link [[poke around there a bit|Bandstand Seats]]&gt;&gt;&lt;&lt;/link&gt;&gt; and see what you can find.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 From here you can head south to a [[Fork In The Road]] or north to the [[Crossroads]] .
 
 </tw-passagedata><tw-passagedata pid="14" name="Rose Avenue" tags="" position="525,350" size="100,100">&lt;h1&gt;Rose Garden&lt;/h1&gt;
-[img[bp_Images/rosegarden.jpg]]
-&lt;&lt;if visited(&quot;Rose Garden&quot;) is 1&gt;&gt;
-Here, at the edge of the park, you find a beautiful avenue formed of roses. A thick scent fills the air, making your head swim. Or that might be because your &lt;i&gt;secret crush&lt;/i&gt; Lemon Drizzle is here, chilling among the flowers. She&#39;s too absorbed in them to have noticed you.
-&lt;&lt;else&gt;&gt;
+[img[bp_images/rosegarden.jpg]]
+&lt;&lt;if visited(&quot;Rose Avenue&quot;) is 1&gt;&gt;\
+Here, at the edge of the park, you find a beautiful garden full of roses. A thick scent fills the air, making your head swim. Or that might be because your &lt;i&gt;secret crush&lt;/i&gt; Lemon Drizzle is here, chilling among the flowers. She&#39;s too absorbed in them to have noticed you.
+&lt;&lt;else&gt;&gt;\
 You return to the avenue of roses. Lemon Drizzle is still here, delicately sniffing the flowers.
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $moxie &lt; 6&gt;&gt;
-You try to move forward. You try to speak. But your feet are glued to the floor, and your words stick in your throat. You have a presentiment that this is a moment that your entire life could pivot on. And you just don&#39;t have the &lt;b&gt;moxie,/b&gt; All you can do is slink back to the [[Tropical Ravine]] .
-&lt;&lt;else&gt;&gt;
-[img[bp_Images/lemondrizzle.jpg]]
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $moxie &lt; 6&gt;&gt;\
+You try to move forward. You try to speak. But your feet are glued to the floor, and your words stick in your throat. You have a presentiment that this is a moment that your entire life could pivot on. And you just don&#39;t have the &lt;b&gt;moxie,&lt;/b&gt; All you can do is slink back to the [[Tropical Ravine]] .
+&lt;&lt;else&gt;&gt;\
+[img[bp_images/lemondrizzle.jpg]]
 &quot;Um,&quot; you say. It&#39;s just a simple sentence, but it feels full of significance. &quot;Lemon, hi. Fancy seeing you here.&quot;
 She turns. and breaks into a smile.
 &quot;Oh hi!&quot; she says. &quot;What&#39;s up?&quot;
@@ -302,36 +300,38 @@ She turns. and breaks into a smile.
 &quot;I hadn&#39;t really thought about it,&quot; she admits. &quot;But I am getting a bit peckish. Do you have any ideas?&quot;
 &quot;I was thinking of the museum cafe?&quot; you say. &quot;It&#39;s quiet enough today.&quot;
 &quot;Sounds good to me,&quot; she says smiling. And the two of you [[head off there together|Ending]].
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="PEC" tags="" position="250,850" size="100,100">&lt;h1&gt;PEC&lt;/h1&gt;
-[img[bp_Images/PEC.jpg]]
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="15" name="PEC" tags="" position="250,850" size="100,100">&lt;h1&gt;PEC&lt;/h1&gt;
+[img[bp_images/pec.jpg]]
 The Physical Education Centre! A cathedral to the human body. They don&#39;t let you into it, since you&#39;re not human. Which annoys you.
 
-[img[bp_Images/bowling_green.jpg]]
+&lt;&lt;if not $inventory.contains(&#39;a bouling ball&#39;)&gt;&gt;\
+[img[bp_images/bowling_green.jpg]]
 In fact, it annoys you so much that you decide recompense is in order, so you cast your eye on the posh bouling green next to it. Someone has left their balls out on display. You&#39;re not that good of a friend with them, so you just quietly pocket one of the bouling balls. (A neat trick, when you don&#39;t have pockets.)
-&lt;&lt;run $inventory.push(&#39;a bouling ball&#39;)&gt;&gt;
+&lt;&lt;run $inventory.push(&#39;a bouling ball&#39;)&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
 
 You could exit the park from here, but you don&#39;t really want to. So your only option is to return to the [[Fork In The Road]].
 
 </tw-passagedata><tw-passagedata pid="16" name="Secluded Clearing" tags="" position="625,750" size="100,100">&lt;h1&gt;Secluded Clearing&lt;/h1&gt;
-[img[bp_Images/clearing.jpg]]
+[img[bp_images/clearing.jpg]]
 A secluded clearing. The only exit is east back to the [[Fork In The Road]] .
 
-&lt;&lt;if not $squirrel_scared_off&gt;&gt;
+&lt;&lt;if not $squirrel_scared_off&gt;&gt;\
 You spy a grey squirrel here. He&#39;s looking contemptuously at a nut. While it&#39;s not true that Americans don&#39;t have a sense of humour, you know for a fact that grey squirrels are invariably humourless pedants. Rumour has it that they drove the red squirrels out of the park by constantly pointing out that their species name of &quot;Sciurus vulgaris&quot; meant just &quot;common squirrel&quot;, and the humiliation was too much to bear.
 
-&lt;&lt;if $inventory.contains(&#39;a bouling ball&#39;)&gt;&gt;
-[img[bp_Images/Grey_squirrel.jpg]]
+&lt;&lt;if $inventory.contains(&#39;a bouling ball&#39;)&gt;&gt;\
+[img[bp_images/grey_squirrel.jpg]]
 The squirrel&#39;s eyes light up at the sight of your bouling ball.
 
 &quot;Ac-tu-ally&quot;, he says, clearing his throat. &quot;Did you know that &#39;boules&#39; just means &#39;balls&#39; in French? So when we say &#39;bowling ball&#39; we&#39;re just saying &#39;ball for doing ball things with&#39;. Makes you think, huh?&quot;
 
 It does make you think. You hate thinking. Someone once told you that you think and you drink too much, and you knew which of the two you wanted to quit. So you do the smart thing and hurl the bouling ball at him, scaring him off. Then you go retrieve your bouling ball, because littering is a sin even if it&#39;s with something you technically stole.
-&lt;&lt;set $smarts = $smarts+1&gt;&gt;
-&lt;&lt;set $squirrel_scared_off = true&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $smarts = $smarts+1&gt;&gt;\
+&lt;&lt;set $squirrel_scared_off = true&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You wish you had something to throw at him, but you don&#39;t.
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="StoryDisplayTitle" tags="" position="250,175" size="100,100">Botanic Panic!</tw-passagedata><tw-passagedata pid="18" name="StoryCaption" tags="" position="250,300" size="100,100">[img[bp_Images/theboy.jpg]]
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="17" name="StoryDisplayTitle" tags="" position="250,175" size="100,100">Botanic Panic!</tw-passagedata><tw-passagedata pid="18" name="StoryCaption" tags="" position="250,300" size="100,100">[img[bp_images/theboy.jpg]]
 
 &lt;&lt;link &quot;Map&quot;&gt;&gt;
 &lt;&lt;script&gt;&gt;
@@ -361,9 +361,8 @@ Items carried:
 &lt;&lt;/if&gt;&gt;
 
 [[About This Game]]</tw-passagedata><tw-passagedata pid="19" name="Ending" tags="" position="375,375" size="100,100">You and Lemon Drizzle have a lovely lunch together, followed by a leisurely stroll around the museum. You only eat three paintings, which the museum staff all agree is a personal best as they chase you out. Laughing and out of breath, you find yourselves in front of the legendary Dragon Painting.
-[img[bp_Images/botanicpanic_ending.png]]
+[img[bp_images/botanicpanic_ending.png]]
 Under the gaze of the benevolent dragon, the two of you begin to plot your next adventure. But that is a tale for another time. For now, this is...
-.
 
 &lt;b&gt;The End&lt;/b&gt;</tw-passagedata><tw-passagedata pid="20" name="Stats Explanation" tags="" position="250,450" size="100,100">Your stats all start at 1, and can grow through your adventure.
 
@@ -371,27 +370,27 @@ Moxie is a measure of how self-confident you are, and will grow as you solve puz
 
 Smarts is a measure of how intelligent you are, and will grow as you learn things.
 
-Increased stats will open up new options for you on how to deal with things.</tw-passagedata><tw-passagedata pid="21" name="your friend Eco" tags="" position="1175,1025" size="100,100">[img[bp_Images/Eco.jpg]]
-&lt;&lt;if not $eco_visited&gt;&gt;
+Increased stats will open up new options for you on how to deal with things.</tw-passagedata><tw-passagedata pid="21" name="your friend Eco" tags="" position="1175,1025" size="100,100">[img[bp_images/eco.jpg]]
+&lt;&lt;if not $eco_visited&gt;&gt;\
 You spend some time chatting to your friend. It&#39;s weird, you&#39;ve never seen him go into the library but he seems to know so many things from it. Maybe it&#39;s osmosis? Either way, just by talking to him you feel smarter.
-&lt;&lt;set $eco_visited to true&gt;&gt;
-&lt;&lt;set $smarts = $smarts+1&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $eco_visited to true&gt;&gt;\
+&lt;&lt;set $smarts = $smarts+1&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You give Eco a brief nod of respect. He nods back. Being just a head, that&#39;s about as much gesturing as he can manage.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
-Enough socializing. &lt;&lt;link [[Back to your quest|Seamus Heaney Library]]&gt;&gt;&lt;&lt;/link&gt;&gt;.</tw-passagedata><tw-passagedata pid="22" name="Lord Kelvin" tags="" position="1225,125" size="100,100">[img[bp_Images/kelvin.jpg]]
-&lt;&lt;if $kelvin_is_cold&gt;&gt;
+Enough socializing. &lt;&lt;link [[Back to your quest|Seamus Heaney Library]]&gt;&gt;&lt;&lt;/link&gt;&gt;.</tw-passagedata><tw-passagedata pid="22" name="Lord Kelvin" tags="" position="1225,125" size="100,100">[img[bp_images/kelvin.jpg]]
+&lt;&lt;if $kelvin_is_cold&gt;&gt;\
 The face of the statue is stern, and he looks unwilling to compromise. And a bit chilly.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 Lord Kelvin is still wearing his scarf. (I know it isn&#39;t in the picture, so you&#39;ll have to trust me on this.)
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
-&lt;&lt;link[[Return|Park Entrance]] &gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Bandstand Seats" tags="" position="425,550" size="100,100">[img[bp_Images/scarf.jpg]]
+&lt;&lt;link[[Return|Park Entrance]] &gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Bandstand Seats" tags="" position="425,550" size="100,100">[img[bp_images/scarf.jpg]]
 You notice a scarf tucked under the seats. For some reason you think it might come in handy, so you take it with you.
 
-&lt;&lt;run $inventory.push(&#39;a scarf&#39;)&gt;&gt;
-&lt;&lt;link [[Return|Band Stand]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Audrey" tags="" position="1325,550" size="100,100">[img[bp_Images/audrey.jpg]]
+&lt;&lt;run $inventory.push(&#39;a scarf&#39;)&gt;&gt;\
+&lt;&lt;link [[Return|Band Stand]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Audrey" tags="" position="1325,550" size="100,100">[img[bp_images/audrey.jpg]]
 Audrey, or to use her full name Audrey III, has been your friend for years. She&#39;s from America originally, and you remember being told that her mother was pretty famous over there. Despite this, Audrey has always been pretty grounded.
 
 &lt;&lt;if visited(&quot;Audrey&quot;) is 1&gt;&gt;
@@ -399,91 +398,91 @@ You consider asking Audrey if she&#39;s hungry, but then you noticed the bloodst
 &lt;&lt;set $moxie = $moxie+1&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-[[Return|Palm House]]</tw-passagedata><tw-passagedata pid="25" name="colourful mural" tags="" position="975,1025" size="100,100">[img[bp_Images/mural.jpg]]
-&lt;&lt;if visited(&quot;colourful mural&quot;) is 1&gt;&gt;
+[[Return|Palm House]]</tw-passagedata><tw-passagedata pid="25" name="colourful mural" tags="" position="975,1025" size="100,100">[img[bp_images/mural.jpg]]
+&lt;&lt;if visited(&quot;colourful mural&quot;) is 1&gt;&gt;\
 Setting aside debates on its nomenclature, it still cheers you up to look at this picture. It was created as part of the Belfast Mela, a citywide event to celebrate the diverse range of cultures that have made their homw in Belfast. Here in Botanic Park they had dancers, craftwork stalls, and of course a great range of different foods. Your mouth starts watering remembering it, as if a Russian man had rung a bell. 
 
 This mural (you&#39;ve decided it&#39;s a mural) is one of several around the park that were put up for that event. This particular one has been slightly damaged by winter storms, but it&#39;s still standing. You feel a sense of kinship with it that inspires you with self-confidence.
-&lt;&lt;set $moxie = $moxie+1&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $moxie = $moxie+1&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You smile at the sight of the mural once again.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 [[Return|Mural]] </tw-passagedata><tw-passagedata pid="26" name="Ravine Interior" tags="" position="650,450" size="100,100">&lt;h1&gt;Inside The Ravine&lt;/h1&gt;
-[img[bp_Images/ravine_interior.jpg]]
-&lt;&lt;if visited(&quot;Ravine Interior&quot;) is 1&gt;&gt;
+[img[bp_images/ravine_interior.jpg]]
+&lt;&lt;if visited(&quot;Ravine Interior&quot;) is 1&gt;&gt;\
 The actual waterfall isn&#39;t quite as impressive as the one in your imagination, but it still makes a satisfying noise. The atmosphere is actually tropical, though not in a brutal way. You feel the gentle heat relax your muscles, and the gentle atmosphere relax your mind. After a few minutes of meditation, you come back to yourself, feeling refreshed and thinking more clearly. You head back [[outside|Tropical Ravine]]  with renewed purpose.
-&lt;&lt;set $smarts = $smarts+1&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $smarts = $smarts+1&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You spend a few moments relaxing inside the ravine, and then reluctantly return to [[the outside world|Tropical Ravine]].
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
 </tw-passagedata><tw-passagedata pid="27" name="Museum Lobby" tags="" position="600,175" size="100,100">&lt;h1&gt;Museum Lobby&lt;/h1&gt;
-[img[bp_Images/lobby.jpg]]
-&lt;&lt;if visited(&quot;Museum Lobby&quot;) is 1&gt;&gt;
+[img[bp_images/lobby.jpg]]
+&lt;&lt;if visited(&quot;Museum Lobby&quot;) is 1&gt;&gt;\
 You&#39;re in the lobby of the amazing Ulster Museum. Sometimes you&#39;d lose an entire day in here, wandering upstairs through science into history and onwards into art. You&#39;ve got other plans today. Though you do take note of the cafe - maybe if you find someone to eat with, you can come back here for lunch. Speaking of, your reason for coming here today is to visit your friend who lives in the museum - [[her room|Takabuti&#39;s Room]] is upstairs. Or you can [[go back outside|Museum Entrance]].
-&lt;&lt;elseif visited(&quot;Takabuti&#39;s Room&quot;) is 1&gt;&gt;
+&lt;&lt;elseif visited(&quot;Takabuti&#39;s Room&quot;) is 0&gt;&gt;\
+You&#39;re back in the museum lobby. You could [[go upstairs|Takabuti&#39;s Room]] to visit your friend Takabuti. Or you can [[go back outside|Museum Entrance]].
+&lt;&lt;else&gt;&gt;\
 You&#39;re back in the museum lobby. You could [[go back upstairs|Takabuti&#39;s Room]] to visit Takabuti again. Or you can [[go back outside|Museum Entrance]].
-&lt;&lt;else&gt;&gt;
-You&#39;re back in the museum lobby. You could [[go back upstairs|Takabuti&#39;s Room]] to visit Takabuti again. Or you can [[go back outside|Museum Entrance]].
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 </tw-passagedata><tw-passagedata pid="28" name="Takabuti&#39;s Room" tags="" position="425,175" size="100,100">&lt;h1&gt;Takabuti&#39;s Room&lt;/h1&gt;
-[img[bp_Images/takabuti.jpg]]
-&lt;&lt;if visited(&quot;Takabuti&#39;s Room&quot;) is 1&gt;&gt;
+[img[bp_images/takabuti.jpg]]
+&lt;&lt;if visited(&quot;Takabuti&#39;s Room&quot;) is 1&gt;&gt;\
 Here she is: Takabuti, one of your best friends in the world. She died over two and a half thousand years ago, but she hasn&#39;t let that get her down. She&#39;s had all kinds of adventures, which ended up in her being here in the Ulster Museum where she teaches kids all about ancient Egypt. She doesn&#39;t talk much, but she&#39;s a great listener and you always feel much more confident in yourself after you meetup with her.
-&lt;&lt;set $moxie = $moxie+2&gt;&gt;
+&lt;&lt;set $moxie = $moxie+2&gt;&gt;\
 After a good long chat you bid your farewells and [[head back downstairs|Museum Lobby]].
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 You pop back into Takabuti&#39;s room and say hi, but she doesn&#39;t respond. Maybe she&#39;s sleeping? You should go back to the [[Museum Lobby]] and leave her in peace.
-&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="29" name="Vampire Tigger" tags="" position="875,450" size="100,100">[img[bp_Images/vampire_tigger.jpg]]
+&lt;&lt;/if&gt;&gt;\
+</tw-passagedata><tw-passagedata pid="29" name="Vampire Tigger" tags="" position="875,450" size="100,100">[img[bp_images/vampire_tigger.jpg]]
 A ferocious beast with an almost insatiable thirst for blood. Lucky for you it&#39;s only &quot;almost&quot; insatiable, and he just ate. So you&#39;re safe enough as long as you don&#39;t get too near him.
-&lt;&lt;if $smarts&gt;=2&gt;&gt;
+&lt;&lt;if $smarts&gt;=2&gt;&gt;\
 You realise that though this may be a vampire, it&#39;s also a devil. And there&#39;s only one way to deal with the devil at the crossroads.
-	&lt;&lt;if $inventory.contains(&#39;a harp&#39;)&gt;&gt;
+	&lt;&lt;if $inventory.contains(&#39;a harp&#39;)&gt;&gt;\
 You grip your harp tightly. This calls for a virtuoso performance.
-             &lt;&lt;if $moxie&gt;=3&gt;&gt;
+             &lt;&lt;if $moxie&gt;=3&gt;&gt;\
 You break into a blistering solo, your fingers moving like lightning. Someone very perceptive might even spot a tune in there. There are notes in there that only cats can hear. Luckily, a tigger is a type of cat so he can hear this just fine. Though he might prefer he didn&#39;t. With a look of disgust he says &quot;Okay, fine! If I let you past will you please stop?&quot;.
-&lt;&lt;set $vampire_defeated to true&gt;&gt;
-         	&lt;&lt;else&gt;&gt;
+&lt;&lt;set $vampire_defeated to true&gt;&gt;\
+         	&lt;&lt;else&gt;&gt;\
  You release your grip. You are too faint-hearted to play a strange instrument in front of a strange creature. Maybe if you had a bit more &lt;b&gt;moxie&lt;/b&gt; things would be different.
-			&lt;&lt;/if&gt;&gt;
-       &lt;&lt;else&gt;&gt;
+			&lt;&lt;/if&gt;&gt;\
+       &lt;&lt;else&gt;&gt;\
  However you don&#39;t have a fiddle. You don&#39;t have any form of stringed instrument. And you don&#39;t think the devil goes in for a cappela music.
-     &lt;&lt;/if&gt;&gt;
- &lt;&lt;else&gt;&gt;
+     &lt;&lt;/if&gt;&gt;\
+ &lt;&lt;else&gt;&gt;\
  There&#39;s definitely a way to defeat this monster, and if you had a few more &lt;b&gt;smarts&lt;/b&gt; you might be able to figure it out.
- &lt;&lt;/if&gt;&gt;
+ &lt;&lt;/if&gt;&gt;\
  
 [[Return|Crossroads]] 
 
-</tw-passagedata><tw-passagedata pid="30" name="Harpist" tags="" position="900,750" size="100,100">[img[bp_Images/musician.jpg]]
+</tw-passagedata><tw-passagedata pid="30" name="Harpist" tags="" position="900,750" size="100,100">[img[bp_images/musician.jpg]]
 You don&#39;t normally talk to paintings, but this lady seems approachable.
-&lt;&lt;if visited(&quot;Vampire Tigger&quot;) &gt; 0 and $smarts&gt;=2&gt;&gt;
+&lt;&lt;if visited(&quot;Vampire Tigger&quot;) &gt; 0 and $smarts&gt;=2&gt;&gt;\
 And her harp might let you challenge the devil at the crossroads, as well. You decided to take a chance, and explain the situation to her. She thinks about it for a bit, then hands you the harp.
 &quot;Honestly, I wasn&#39;t really feeling it today,&quot; she says. &quot;Just drop it into the reception at the museum some time.&quot;
-&lt;&lt;run $inventory.push(&#39;a harp&#39;)&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;run $inventory.push(&#39;a harp&#39;)&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 But you don&#39;t really have any reason to approach her, so you don&#39;t.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
-[[Return|Open Area]] </tw-passagedata><tw-passagedata pid="31" name="solve the riddle" tags="" position="875,275" size="100,100">[img[bp_Images/museum sphinx.jpg]]
+[[Return|Open Area]] </tw-passagedata><tw-passagedata pid="31" name="solve the riddle" tags="" position="875,275" size="100,100">[img[bp_images/museum sphinx.jpg]]
 &quot;Well?&quot; says the spinx. &quot;What walks on four legs in the morning, two legs during the day, and three legs at night?&quot;
 
-&lt;&lt;if $smarts &lt; 3&gt;&gt;
+&lt;&lt;if $smarts &lt; 3&gt;&gt;\
 &quot;...me?&quot; you say tentatively. &quot;I do a lot of things. That might be one of them.&quot;
 
 The sphinx laughs sardonically, and doesn&#39;t dignify your answer with a response. Dang. Maybe if you had more &lt;b&gt;smarts&lt;/b&gt; you might be able to give a better answer.
-&lt;&lt;elseif not $obvious_answer_given&gt;&gt;
+&lt;&lt;elseif not $obvious_answer_given&gt;&gt;\
 &quot;I know it!&quot; you say confidently. &quot;It&#39;s from the legend of Oedipus, isn&#39;t it? The answer is man. He crawls on all fours in the morning, walks on two legs during his life and then as old age comes on he uses a cane.&quot;
 
 &quot;Really?&quot; drawls the sphinx sardonically. &quot;You think we haven&#39;t updated the answer in two thousand years? You should re-examine your biases.&quot;
 
 Dang. Maybe you should try again with a different answer.
-&lt;&lt;set $obvious_answer_given to true&gt;&gt;
-&lt;&lt;elseif $smarts = 3&gt;&gt;
+&lt;&lt;set $obvious_answer_given to true&gt;&gt;\
+&lt;&lt;elseif $smarts == 3&gt;&gt;\
 You draw your breath to answer, then catch a glint in the sphinx&#39;s eye. You realise that you can&#39;t think of a better answer than &quot;Man&quot;, Perhaps you need to hone your &lt;b&gt;smarts&lt;/b&gt; a little more.
-&lt;&lt;else&gt;&gt;
+&lt;&lt;else&gt;&gt;\
 &quot;Is it &#39;woman&#39;?&quot; you ask.
 
 The sphinx sighs, all her confidence suddenly deflated.
@@ -493,25 +492,25 @@ The sphinx sighs, all her confidence suddenly deflated.
 &quot;No, no,&quot; you hurriedly reassure her. &quot;It&#39;s a very clever subversion. I&#39;m impressed.&quot;
 
 She doesn&#39;t look convinced. You decide not to push it.
-&lt;&lt;set $riddle_solved to true&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $riddle_solved to true&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
 
 [[Return|Museum Entrance]] 
- </tw-passagedata><tw-passagedata pid="32" name="informative sign" tags="" position="700,1025" size="100,100">&lt;&lt;if visited(&quot;informative sign&quot;) is 1&gt;&gt;
+ </tw-passagedata><tw-passagedata pid="32" name="informative sign" tags="" position="700,1025" size="100,100">&lt;&lt;if visited(&quot;informative sign&quot;) is 1&gt;&gt;\
 The sign says:
 
 &quot;On this spot Jean-François Gravelet, better known as CHARLES BLONDIN, gave his final performance in 1896 aged seventy-two years old. Forty years earlier he was the first man to cross Niagara Falls on a tightrope, and he continued to perform amazing acrobatic feats for the rest of his life. Even in his final tour he &quot;ran along the rope; he did the journey in a sack, and blindfolded; he stood upright in a chair, which he had previously balanced in the centre of the rope; he stood on his head on the rope, and concluded by carrying his attendant across.&quot; 
 
 You had no idea this important moment in the life of such a noted funambulist took place here in this park!! Today you learned something, and that makes you a little smarter.
-&lt;&lt;set $smarts = $smarts+1&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;set $smarts = $smarts+1&gt;&gt;\
+&lt;&lt;else&gt;&gt;\
 You look at the sign about Blondin, and think of the river of history once again. 
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;\
 
-[[Return|Fork In The Road]] </tw-passagedata><tw-passagedata pid="33" name="Map" tags="" position="250,575" size="100,100">[img[bp_Images/Botanic Panic map.jpg]]
+[[Return|Fork In The Road]] </tw-passagedata><tw-passagedata pid="33" name="Map" tags="" position="250,575" size="100,100">[img[bp_images/botanic_panic_map.jpg]]
 
 You pull out your trusty map of the park, based on your years of exploration. As always, you marvel at how neat your handwriting and draughtsmanship are. If someone didn&#39;t know better they might even think you&#39;d made this using a computer.</tw-passagedata><tw-passagedata pid="34" name="About This Game" tags="" position="125,425" size="100,100">&lt;h1&gt;About This Game&lt;/h1&gt;
-[img[bp_Images/botanicpanic_splashscreen_signed.png]]
+[img[bp_images/botanicpanic_splashscreen_signed.png]]
 
 This game was created as an example of a Twine game for a talk about game development at &lt;a href=&quot;https://www.nidevconf.com/&quot;&gt;the Northern Ireland Developer Conference&lt;/a&gt; in 2024. The following resources were used to create it:
 
