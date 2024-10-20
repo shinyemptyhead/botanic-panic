@@ -1,6 +1,6 @@
 # botanic-panic
 
-![cover image for Botanic Panic](https://github.com/shinyemptyhead/botanic-panic/blob/[branch]/bp_images/botanicpanic_splashscreen.jpg?raw=true)
+![cover image for Botanic Panic](https://github.com/shinyemptyhead/botanic-panic/blob/main/bp_images/botanicpanic_splashscreen.jpg?raw=true)
 
 This game was created as an example of a Twine game for a talk about game development at [the Northern Ireland Developer Conference](https://www.nidevconf.com/) in 2024. The following resources were used to create it:
 
